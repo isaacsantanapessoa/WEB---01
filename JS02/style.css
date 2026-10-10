@@ -1,11 +1,11 @@
 body {
-    background-color: beige;
+    background-image: url("assets/calculadora.jpg");
 }
 h1{
     text-align: center;
 }
 section{
-    background-color: rgb(221, 193, 150);
+    background-color: rgb(237, 229, 120);
     width: 300px;
     height: 350px;
     padding: 5%;
@@ -13,7 +13,7 @@ section{
     border-radius: 10px;
 }
 div{
-    background-color: rgb(221, 193, 150);
+    background-color: rgb(237, 229, 120);
     text-align: center;
     border-radius: 10px;
     height: 150px;

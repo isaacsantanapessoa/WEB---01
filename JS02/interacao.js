@@ -9,6 +9,6 @@ function calcular(){
     texto.innerHTML += "<br>Divisão :"+ (n1/n2);
     texto.innerHTML += "<br>Multiplicação "+(n1*n2);
     texto.innerHTML += "<br>Potência "+(n1**n2);
-    texto.innerHTML += "<br>Resto Divisão"+(n1%n2);
+    texto.innerHTML += "<br>Resto Divisão "+(n1%n2);
 
 }
