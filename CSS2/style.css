@@ -139,7 +139,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: calc((100% - 96px) / 5);
+  width: calc((100% - 96px) / 4);
   box-sizing: border-box;
   padding: 14px;
   background-color: #1B2437;
@@ -260,7 +260,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Células */
+/* Partes da tabela */
 .tabela td {
   padding: 14px 18px;
   border: 1px solid #2F3A57;
@@ -335,4 +335,67 @@ html {
 
 .generos-caixa li {
   padding: 4px 0;
+}
+.sobre {
+  padding: 0 80px;
+  margin-bottom: 56px;
+}
+
+.sobre-titulo {
+  margin: 56px 0 20px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: #F1F5F9;
+}
+
+/* Caixa do parágrafo */
+.sobre-caixa {
+  display: flow-root;          
+  padding: 28px;
+  background-color: #1B2437;
+  border: 1px solid #2F3A57;
+  border-radius: 10px;
+}
+
+/* Imagem pequena flutuando à direita */
+.sobre-imagem {
+  float: right;                
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin: 0 0 12px 24px;       
+  border: 3px solid #A855F7;
+  border-radius: 50%;
+}
+
+.sobre-caixa p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #CBD5E1;
+}
+
+/* Links das redes sociais */
+.sobre-redes {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.sobre-redes a {
+  padding: 10px 18px;
+  border: 1px solid #44507A;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #F1F5F9;
+  text-decoration: none;
+}
+
+.sobre-redes a:hover,
+.sobre-redes a:focus {
+  background-color: #A855F7;
+  border-color: #A855F7;
+  color: #0F172A;
+  outline: none;
 }
