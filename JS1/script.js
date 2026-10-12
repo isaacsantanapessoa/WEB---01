@@ -105,4 +105,11 @@ function aplicarFiltros() {
 campoBusca.addEventListener("input", aplicarFiltros);
 filtroGenero.addEventListener("change", aplicarFiltros);
 
+const botaoInverter = document.getElementById("btn-inverter");
+
+botaoInverter.addEventListener("click", function () {
+  filmes.reverse();      // inverte a ordem do array
+  aplicarFiltros();      // mostra o catálogo de novo, respeitando busca e filtro
+});
+
 mostrarFilmes(filmes);

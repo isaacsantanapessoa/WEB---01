@@ -460,3 +460,19 @@ html {
   outline: none;
   border-color: #A855F7;
 }
+#btn-inverter {
+  padding: 12px 20px;
+  background-color: #A855F7;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0F172A;
+  cursor: pointer;
+}
+#btn-inverter:hover,
+#btn-inverter:focus {
+  background-color: #C084FC;
+  outline: none;
+}
