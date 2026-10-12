@@ -117,9 +117,6 @@ body {
   color: #94A3B8;
 }
 
-.catalogo {
-    padding: 0 80px;
-}
 /*Título da seção*/
 .catalogo-titulo {
   margin: 56px 0 20px;
@@ -128,11 +125,41 @@ body {
   letter-spacing: 1px;
   color: #F1F5F9;
 }
-/*Os card ficam lado a lado e pulam a linha*/
-.catalogo-grade {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px
+.catalogo-topo {
+  padding: 56px 80px 0;
+}
+
+.catalogo-titulo {
+  margin: 0 0 8px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: #F1F5F9;
+}
+
+.catalogo-contador {
+  margin: 0;
+  color: #94A3B8;
+}
+
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 80px 0;
+  margin-bottom: 56px;
+  scroll-margin-top: 100px;   /* o menu mostra o título ao rolar */
+}
+
+/* selo Recomendado */
+.selo {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: #A855F7;
+  color: #0F172A;
+  font-size: 12px;
+  font-weight: 600;
 }
 /*Estilização do card do catálogo*/
 .catalogo-card {
@@ -398,4 +425,15 @@ html {
   border-color: #A855F7;
   color: #0F172A;
   outline: none;
+}
+.sem-resultado {
+  margin: 0;
+  font-size: 18px;
+  color: #94A3B8;
+}
+.catalogo-controles {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
 }

@@ -9,3 +9,33 @@ let filmes = [
     { titulo: "Oppenheimer", ano: 2023, genero: ["Suspense","História","Drama"], nota: 8.3, poster: "assets/oppenheimer.jpeg" }
 ];
 
+function mostrarFilmes(lista) {
+  const secao = document.getElementById("catalogo");
+  let html = "";
+
+  for (const filme of lista) {
+    const selo = filme.nota >= 8 ? '<span class="selo">⭐ Recomendado</span>' : "";
+    const nota = filme.nota !== null ? filme.nota.toFixed(1).replace(".", ",") : "—";
+
+    let generos = "";
+    for (const g of filme.genero) {
+      generos += "<li>" + g + "</li>";
+    }
+
+    html += `
+      <div class="catalogo-card">
+        <img src="${filme.poster}" alt="Pôster de ${filme.titulo}">
+        ${selo}
+        <h3><a href="#">${filme.titulo}</a></h3>
+        <p class="catalogo-detalhes">${filme.ano} · Nota ${nota}</p>
+        <ul class="catalogo-generos">${generos}</ul>
+      </div>
+    `;
+  }
+
+  secao.innerHTML = html;
+  document.getElementById("contador").innerText = lista.length;
+}
+
+mostrarFilmes(filmes);
+
