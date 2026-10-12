@@ -533,3 +533,9 @@ html {
   color: #0F172A;
   cursor: pointer;
 }
+.catalogo-titulo,
+.destaque-titulo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+}

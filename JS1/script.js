@@ -152,6 +152,25 @@ botaoLimpar.addEventListener("click", function () {
   mostrarFavoritos();      // atualiza a página
 });
 
-mostrarFavoritos();        // mostra "0" e a mensagem ao abrir a página
+mostrarFavoritos();        
+
+// interação com o mouse nos títulos
+const tituloCatalogo = document.querySelector(".catalogo-titulo");
+const tituloDestaque = document.querySelector(".destaque-titulo");
+
+function destacarTitulo(elemento) {
+  elemento.addEventListener("mouseenter", function () {
+    elemento.style.color = "#A855F7";               
+    elemento.style.backgroundColor = "#1B2437";     
+  });
+
+  elemento.addEventListener("mouseout", function () {
+    elemento.style.color = "#F1F5F9";               
+    elemento.style.backgroundColor = "transparent"; 
+  });
+}
+
+destacarTitulo(tituloCatalogo);
+destacarTitulo(tituloDestaque);
 
 mostrarFilmes(filmes);
