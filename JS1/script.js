@@ -74,20 +74,35 @@ function mostrarFilmes(lista) {
   secao.innerHTML = html;
   document.getElementById("contador").innerText = lista.length;
 }
-// busca por título
-const campoBusca = document.getElementById("busca");
 
-campoBusca.addEventListener("input", function () {
+// busca por título + filtro por gênero
+const campoBusca = document.getElementById("busca");
+const filtroGenero = document.getElementById("filtro-genero");
+
+function aplicarFiltros() {
   const texto = campoBusca.value.toLowerCase();
+  const genero = filtroGenero.value;
   const encontrados = [];
 
   for (const filme of filmes) {
-    if (filme.titulo.toLowerCase().includes(texto)) {
+    const achouTitulo = filme.titulo.toLowerCase().includes(texto);
+
+    let achouGenero;
+    if (genero === "todos") {
+      achouGenero = true;
+    } else {
+      achouGenero = filme.genero.includes(genero);
+    }
+
+    if (achouTitulo && achouGenero) {
       encontrados.push(filme);
     }
   }
 
   mostrarFilmes(encontrados);
-});
+}
+
+campoBusca.addEventListener("input", aplicarFiltros);
+filtroGenero.addEventListener("change", aplicarFiltros);
 
 mostrarFilmes(filmes);

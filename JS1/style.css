@@ -438,7 +438,8 @@ html {
   margin-top: 16px;
 }
 
-#busca {
+#busca,
+#filtro-genero {
   padding: 12px 16px;
   background-color: #1B2437;
   border: 1px solid #2F3A57;
@@ -454,7 +455,8 @@ html {
   box-sizing: border-box;
 }
 
-#busca:focus {
+#busca:focus,
+#filtro-genero:focus {
   outline: none;
   border-color: #A855F7;
 }
