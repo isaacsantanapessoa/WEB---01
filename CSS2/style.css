@@ -24,8 +24,8 @@ body {
   letter-spacing: 4px;
   line-height: 1;
   margin: 0;
-  color: rgb(168, 85, 247);               /* #A855F7 */
-  text-shadow: 4px 4px 0 rgb(15, 23, 42); /* #0F172A */
+  color: rgb(168, 85, 247);               
+  text-shadow: 4px 4px 0 rgb(15, 23, 42); 
 }
 /* Subtitulo abaixo do nome do catálogo*/
 .banner h2 {
