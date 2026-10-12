@@ -39,3 +39,55 @@ function mostrarFilmes(lista) {
 
 mostrarFilmes(filmes);
 
+function mostrarFilmes(lista) {
+  const secao = document.getElementById("catalogo");
+
+  // se a lista veio vazia, mostra a mensagem na própria página
+  if (lista.length === 0) {
+    secao.innerHTML = '<p class="sem-resultado">Nenhum filme encontrado</p>';
+    document.getElementById("contador").innerText = 0;
+    return;
+  }
+
+  let html = "";
+
+  for (const filme of lista) {
+    const selo = filme.nota >= 8 ? '<span class="selo">⭐ Recomendado</span>' : "";
+    const nota = filme.nota !== null ? filme.nota.toFixed(1).replace(".", ",") : "—";
+
+    let generos = "";
+    for (const g of filme.genero) {
+      generos += "<li>" + g + "</li>";
+    }
+
+    html += `
+      <div class="catalogo-card">
+        <img src="${filme.poster}" alt="Pôster de ${filme.titulo}">
+        ${selo}
+        <h3><a href="#">${filme.titulo}</a></h3>
+        <p class="catalogo-detalhes">${filme.ano} · Nota ${nota}</p>
+        <ul class="catalogo-generos">${generos}</ul>
+      </div>
+    `;
+  }
+
+  secao.innerHTML = html;
+  document.getElementById("contador").innerText = lista.length;
+}
+// busca por título
+const campoBusca = document.getElementById("busca");
+
+campoBusca.addEventListener("input", function () {
+  const texto = campoBusca.value.toLowerCase();
+  const encontrados = [];
+
+  for (const filme of filmes) {
+    if (filme.titulo.toLowerCase().includes(texto)) {
+      encontrados.push(filme);
+    }
+  }
+
+  mostrarFilmes(encontrados);
+});
+
+mostrarFilmes(filmes);

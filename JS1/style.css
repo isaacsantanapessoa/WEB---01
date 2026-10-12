@@ -437,3 +437,24 @@ html {
   flex-wrap: wrap;
   margin-top: 16px;
 }
+
+#busca {
+  padding: 12px 16px;
+  background-color: #1B2437;
+  border: 1px solid #2F3A57;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #F1F5F9;
+}
+
+#busca {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+#busca:focus {
+  outline: none;
+  border-color: #A855F7;
+}
