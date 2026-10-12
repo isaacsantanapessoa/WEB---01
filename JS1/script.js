@@ -51,16 +51,16 @@ function mostrarFilmes(lista) {
 const campoBusca = document.getElementById("busca");
 const filtroGenero = document.getElementById("filtro-genero");
 
+function limpar(t) {
+  return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function aplicarFiltros() {
-  const texto = campoBusca.value.toLowerCase();
   const genero = filtroGenero.value;
   const encontrados = [];
 
-  function limpar(t) {
-  return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-// no aplicarFiltros:
-const achouTitulo = limpar(filme.titulo).includes(limpar(campoBusca.value));
+  for (const filme of filmes) {
+    const achouTitulo = limpar(filme.titulo).includes(limpar(campoBusca.value));
 
     let achouGenero;
     if (genero === "todos") {
@@ -76,6 +76,10 @@ const achouTitulo = limpar(filme.titulo).includes(limpar(campoBusca.value));
 
   mostrarFilmes(encontrados);
 }
+
+campoBusca.addEventListener("input", aplicarFiltros);
+filtroGenero.addEventListener("change", aplicarFiltros);
+
 
 campoBusca.addEventListener("input", aplicarFiltros);
 filtroGenero.addEventListener("change", aplicarFiltros);
