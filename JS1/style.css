@@ -143,8 +143,8 @@ body {
 }
 
 #catalogo {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   padding: 20px 80px 0;
   margin-bottom: 56px;
@@ -166,11 +166,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: calc((100% - 96px) / 4);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   box-sizing: border-box;
   padding: 14px;
   background-color: #1B2437;
-  border: 2px solid #2f3a57;
+  border: 1px solid #2f3a57;
   border-radius: 12px;
 }
 /*Formatação da imagem relacionada ao card*/
@@ -428,11 +428,13 @@ html {
 }
 .sem-resultado {
   margin: 0;
+  grid-column: 1/-1;
   font-size: 18px;
   color: #94A3B8;
 }
 .catalogo-controles {
   display: flex;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 16px;
@@ -475,4 +477,59 @@ html {
 #btn-inverter:focus {
   background-color: #C084FC;
   outline: none;
+}
+.btn-favoritar {
+  margin-top: auto;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #A855F7;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #A855F7;
+  cursor: pointer;
+}
+
+.btn-favoritar:hover,
+.btn-favoritar:focus {
+  background-color: #A855F7;
+  color: #0F172A;
+  outline: none;
+}
+
+.favoritos {
+  padding: 0 80px;
+  margin-bottom: 56px;
+}
+
+.favoritos-titulo {
+  margin: 56px 0 20px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: #F1F5F9;
+}
+
+#lista-favoritos {
+  margin: 0 0 20px;
+  padding-left: 24px;
+  list-style-type: square;
+  color: #A855F7;
+}
+
+#lista-favoritos li {
+  padding: 4px 0;
+  color: #F1F5F9;
+}
+
+#btn-limpar {
+  padding: 12px 20px;
+  background-color: #A855F7;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0F172A;
+  cursor: pointer;
 }

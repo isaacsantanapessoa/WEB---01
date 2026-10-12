@@ -14,6 +14,7 @@ function mostrarFilmes(lista) {
   let html = "";
 
   for (const filme of lista) {
+    const indice = filmes.indexOf(filme);
     const selo = filme.nota >= 8 ? '<span class="selo">⭐ Recomendado</span>' : "";
     const nota = filme.nota !== null ? filme.nota.toFixed(1).replace(".", ",") : "—";
 
@@ -29,6 +30,7 @@ function mostrarFilmes(lista) {
         <h3><a href="#">${filme.titulo}</a></h3>
         <p class="catalogo-detalhes">${filme.ano} · Nota ${nota}</p>
         <ul class="catalogo-generos">${generos}</ul>
+        <button class="btn-favoritar" onclick="favoritar(${indice})">♥ Favoritar</button>
       </div>
     `;
   }
@@ -52,6 +54,7 @@ function mostrarFilmes(lista) {
   let html = "";
 
   for (const filme of lista) {
+    const indice = filmes.indexOf(filme);
     const selo = filme.nota >= 8 ? '<span class="selo">⭐ Recomendado</span>' : "";
     const nota = filme.nota !== null ? filme.nota.toFixed(1).replace(".", ",") : "—";
 
@@ -67,6 +70,7 @@ function mostrarFilmes(lista) {
         <h3><a href="#">${filme.titulo}</a></h3>
         <p class="catalogo-detalhes">${filme.ano} · Nota ${nota}</p>
         <ul class="catalogo-generos">${generos}</ul>
+        <button class="btn-favoritar" onclick="favoritar(${indice})">♥ Favoritar</button>
       </div>
     `;
   }
@@ -111,5 +115,43 @@ botaoInverter.addEventListener("click", function () {
   filmes.reverse();      // inverte a ordem do array
   aplicarFiltros();      // mostra o catálogo de novo, respeitando busca e filtro
 });
+
+let favoritos = [];
+
+function favoritar(indice) {
+  const titulo = filmes[indice].titulo;
+
+  // só adiciona se o título ainda não estiver na lista
+  if (!favoritos.includes(titulo)) {
+    favoritos.push(titulo);
+  }
+
+  mostrarFavoritos();
+}
+
+function mostrarFavoritos() {
+  const lista = document.getElementById("lista-favoritos");
+  let html = "";
+
+  if (favoritos.length === 0) {
+    html = "<li>Nenhum filme favoritado ainda</li>";
+  } else {
+    for (const titulo of favoritos) {
+      html += "<li>" + titulo + "</li>";
+    }
+  }
+
+  lista.innerHTML = html;
+  document.getElementById("contador-favoritos").innerText = favoritos.length;
+}
+
+const botaoLimpar = document.getElementById("btn-limpar");
+
+botaoLimpar.addEventListener("click", function () {
+  favoritos = [];          // esvazia o array
+  mostrarFavoritos();      // atualiza a página
+});
+
+mostrarFavoritos();        // mostra "0" e a mensagem ao abrir a página
 
 mostrarFilmes(filmes);
