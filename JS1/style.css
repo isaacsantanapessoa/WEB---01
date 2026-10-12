@@ -129,14 +129,6 @@ body {
   padding: 56px 80px 0;
 }
 
-.catalogo-titulo {
-  margin: 0 0 8px;
-  font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: 36px;
-  letter-spacing: 1px;
-  color: #F1F5F9;
-}
-
 .catalogo-contador {
   margin: 0;
   color: #94A3B8;
@@ -166,7 +158,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   box-sizing: border-box;
   padding: 14px;
   background-color: #1B2437;
@@ -214,26 +205,6 @@ body {
   border-radius: 999px;
   font-size: 12px;
   color: #A855F7;
-}
-.lancamentos {
-  padding: 0 80px;
-  margin-bottom: 56px;
-}
-
-.lancamentos-titulo {
-  margin: 56px 0 20px;
-  font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: 36px;
-  letter-spacing: 1px;
-  color: #F1F5F9;
-}
-
-/* Tabela */
-.tabela {
-  width: 100%;
-  border-collapse: collapse;  
-  font-size: 15px;
-  color: #F1F5F9;
 }
 
 /* Cabeçalho destacado */
@@ -462,7 +433,7 @@ html {
   outline: none;
   border-color: #A855F7;
 }
-#btn-inverter {
+#btn-inverter, #btn-limpar {
   padding: 12px 20px;
   background-color: #A855F7;
   border: none;
@@ -521,21 +492,16 @@ html {
   padding: 4px 0;
   color: #F1F5F9;
 }
-
-#btn-limpar {
-  padding: 12px 20px;
-  background-color: #A855F7;
-  border: none;
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #0F172A;
-  cursor: pointer;
-}
 .catalogo-titulo,
 .destaque-titulo {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 8px;
+}
+@media (max-width: 900px) {
+  #catalogo { grid-template-columns: repeat(2, 1fr); }
+  .destaque-card { flex-direction: column; }
+  .banner h1 { font-size: 56px; }
+  .destaque, .catalogo-topo, #catalogo, .lancamentos,
+  .generos, .sobre, .favoritos { padding-left: 24px; padding-right: 24px; }
 }

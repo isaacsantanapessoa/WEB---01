@@ -33,7 +33,7 @@ function mostrarFilmes(lista) {
 
     html += `
       <div class="catalogo-card">
-        <img src="${filme.poster}" alt="Pôster de ${filme.titulo}">
+        <img src="${filme.poster}" alt="Pôster de ${filme.titulo}" loading="lazy">
         ${selo}
         <h3><a href="#">${filme.titulo}</a></h3>
         <p class="catalogo-detalhes">${filme.ano} · Nota ${nota}</p>
@@ -56,8 +56,11 @@ function aplicarFiltros() {
   const genero = filtroGenero.value;
   const encontrados = [];
 
-  for (const filme of filmes) {
-    const achouTitulo = filme.titulo.toLowerCase().includes(texto);
+  function limpar(t) {
+  return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+// no aplicarFiltros:
+const achouTitulo = limpar(filme.titulo).includes(limpar(campoBusca.value));
 
     let achouGenero;
     if (genero === "todos") {
